@@ -143,7 +143,7 @@ class Config(configparser.SafeConfigParser):
 
     def get(self, section, name, default=None, raw=False, vars=None, fallback=configparser._UNSET):
         try:
-            val = configparser.SafeConfigParser.get(self, section, name, raw=raw, vars=None, fallback=fallback)
+            val = configparser.SafeConfigParser.get(self, section, name, raw=raw, vars=vars, fallback=fallback)
         except:
             val = default
         return val
@@ -151,14 +151,14 @@ class Config(configparser.SafeConfigParser):
     def getint(self, section, name, default=0, raw=False, vars=None, fallback=configparser._UNSET):
         try:
         
-            val = configparser.SafeConfigParser.getint(self, section, name, raw=raw, vars=None, fallback=fallback)
+            val = configparser.SafeConfigParser.getint(self, section, name, raw=raw, vars=vars, fallback=fallback)
         except:
             val = int(default)
         return val
     
     def getfloat(self, section, name, default=0.0, raw=False, vars=None, fallback=configparser._UNSET):
         try:
-            val = configparser.SafeConfigParser.getfloat(self, section, name, raw=raw, vars=None, fallback=fallback)
+            val = configparser.SafeConfigParser.getfloat(self, section, name, raw=raw, vars=vars, fallback=fallback)
         except:
             val = float(default)
         return val
